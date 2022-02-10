@@ -1,17 +1,35 @@
 {
-  "name": "vite-project",
-  "private": true,
-  "version": "0.0.0",
+  "name": "showdown-copy-code",
+  "description": "Showdown extension that adds a button above code blocks to quickly and easily copy code to the clipboard.",
+  "keywords": [
+    "showdown",
+    "highlight",
+    "extension",
+    "code",
+    "blocks",
+    "button",
+    "copy"
+  ],
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "author": "Piotr Placzek (piotrpdev)",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piotrpdev/showdown-copy-code.git"
+  },
+  "bugs": {
+    "url": "https://github.com/piotrpdev/showdown-copy-code/issues"
+  },
+  "homepage": "https://github.com/piotrpdev/showdown-copy-code#readme",
+  "dependencies": {
+    "showdown": "^2.0.0-alpha"
   },
   "devDependencies": {
-    "vite": "^2.8.0"
-  },
-  "dependencies": {
-    "showdown": "^2.0.0-alpha",
+    "mocha": "^9.2.0",
     "showdown-highlight": "^2.1.8"
   }
 }
