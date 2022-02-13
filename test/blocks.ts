@@ -1,4 +1,4 @@
-const mdSingleBlock = `
+export const mdSingleBlock = `
 ## Highlighting Code with Showdown
 
 Below we have a piece of JavaScript code:
@@ -20,7 +20,7 @@ document.querySelector('[data-type="rocket"]')
 \`\`\`
 `;
 
-const mdDoubleBlock = `
+export const mdDoubleBlock = `
 ## Highlighting Code with Showdown
 
 Below we have a piece of JavaScript code:
@@ -57,5 +57,3 @@ document.querySelector('[data-type="rocket"]')
 // => <div data-type="rocket">🚀</div>
 \`\`\`
 `;
-
-module.exports = { mdSingleBlock, mdDoubleBlock };

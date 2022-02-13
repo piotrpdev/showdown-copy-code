@@ -1,20 +1,21 @@
-const assert = require("assert");
-const showdown = require("showdown");
-const showdownHighlight = require("showdown-highlight");
-const showdownCopyCode = require("..");
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import assert from "assert";
+import showdown, { Converter } from "showdown";
+import showdownHighlight from "showdown-highlight";
+import showdownCopyCode from "../src/showdownCopyCode";
 
-const { mdSingleBlock, mdDoubleBlock } = require("./blocks");
+import { mdSingleBlock, mdDoubleBlock } from "./blocks";
 
 const buttonPattern = /<button class="copy-code">Copy<\/button>/g;
 
-describe("showdown-copy-code", () => {
+describe("showdown-copy-code", function (this) {
   before(() => {
     this.converter = new showdown.Converter({
       extensions: [showdownCopyCode],
     });
 
     this.withHljsConverter = new showdown.Converter({
-      extensions: [showdownHighlight, showdownCopyCode],
+      extensions: [showdownHighlight({ pre: false }), showdownCopyCode],
     });
 
     this.withHljsWithPreConverter = new showdown.Converter({
@@ -22,11 +23,11 @@ describe("showdown-copy-code", () => {
     });
 
     this.withHljsReverseConverter = new showdown.Converter({
-      extensions: [showdownCopyCode, showdownHighlight],
+      extensions: [showdownCopyCode, showdownHighlight({ pre: false })],
     });
   });
 
-  const createTests = (description, test) => {
+  const createTests = (description: string, test: (converter: Converter) => void) => {
     describe(description, () => {
       it("Without showdown-highlight", () => {
         test(this.converter);
