@@ -94,7 +94,6 @@ export default [
         format: "cjs",
         sourcemap: "inline",
         banner,
-        exports: "default",
       },
     ],
     external: [
