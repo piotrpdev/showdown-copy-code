@@ -1,6 +1,6 @@
 # showdown-copy-code
 
-[![Version](https://img.shields.io/npm/v/showdown-copy-code.svg)](https://www.npmjs.com/package/showdown-highlight)
+[![Version](https://img.shields.io/npm/v/showdown-copy-code.svg)](https://www.npmjs.com/package/showdown-copy-code)
 
 Showdown extension that adds a button above code blocks to quickly and easily copy code to the clipboard.
 
