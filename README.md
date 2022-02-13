@@ -1,5 +1,7 @@
 # showdown-copy-code
 
+[![Version](https://img.shields.io/npm/v/showdown-copy-code.svg)](https://www.npmjs.com/package/showdown-highlight)
+
 Showdown extension that adds a button above code blocks to quickly and easily copy code to the clipboard.
 
 *~~Yoinked~~ **Heavily inspired** by [this project](https://www.dannyguo.com/blog/how-to-add-copy-to-clipboard-buttons-to-code-blocks-in-hugo/)* (*[go check out the creator](https://github.com/dguo)*).
@@ -12,10 +14,12 @@ npm install showdown-copy-code
 
 ## Usage
 
+*~~Yoinked~~ **Heavily inspired** by the [showdown-highlight example.](https://github.com/Bloggify/showdown-highlight#clipboard-example)*
+
 ```js
 const showdown = require("showdown");
 const showdownHighlight = require("showdown-highlight");
-const showdownCopyCode = require("showdown-copy-code");
+const { showdownCopyCode } = require("showdown-copy-code");
 
 let converter = new showdown.Converter({
   extensions: [showdownHighlight, showdownCopyCode],
@@ -57,6 +61,12 @@ console.log(html);
 * Need to make sure the fix for the showdown-highlight `pre` option doesn't mess up.
 
 * Uses `navigator.clipboard`, which [might need a polyfill on older browsers.](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard#browser_compatibility)
+
+## Q&A
+
+> Why `{ showdownCopyCode }` instead of `showdownCopyCode`?
+
+[Default vs Named exports.](https://github.com/rollup/rollup/issues/1961)
 
 ## License
 
